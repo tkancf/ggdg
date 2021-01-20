@@ -1,0 +1,11 @@
+<html>
+{{partial "head" .}}
+<body>
+    {{partial "header" .}}
+        <div id="content" style="min-height:80%">
+        {{- block "main" . }}{{- end }}
+        </div>
+
+    {{ partial "footer" . }}
+</body>
+</html>

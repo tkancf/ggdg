@@ -1,0 +1,40 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon-16x16.jpg"> 
+
+    <title>{{ .Site.Title }}{{if and (not .IsHome) (.Title)}} - {{.Title}} {{end}}</title>
+
+    {{if .Params.tags}}
+    <meta content="{{ delimit (union .Params.tags .Params.categories) ", " }}" name="keywords">
+    {{else}}
+    <meta content="{{.Site.Title}}" name="keywords">
+    {{end}}
+    <meta content="{{ .Site.Title }} - {{ or .Description .Summary (printf "A website called %s" .Site.Title)}}" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ block "og-title" . }}{{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ if .IsPage }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ .Params.thumbnail }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}{{ end }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ .Params.thumbnail }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}{{ end }}">
+
+    {{ with .OutputFormats.Get "RSS" }}
+        <link href="{{ .RelPermalink }}" rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
+        <link href="{{ .RelPermalink }}" rel="feed" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
+    {{ end }}
+
+    {{ if .Site.GoogleAnalytics }}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', '{{ .Site.GoogleAnalytics }}');
+        </script>
+    {{ end }}
+
+</head>

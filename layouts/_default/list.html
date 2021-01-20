@@ -1,0 +1,10 @@
+<ul>
+  {{ with (.Site.GetPage "post") }}
+    {{ range first 10 .Pages.ByPublishDate.Reverse }}
+      <li>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>
