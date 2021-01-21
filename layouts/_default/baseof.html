@@ -1,11 +1,13 @@
 <html>
-{{partial "head" .}}
-<body>
-    {{partial "header" .}}
-        <div id="content" style="min-height:80%">
+  {{partial "head" .}}
+  <div class="container">
+    <body>
+      {{partial "header" .}}
+      <div id="content" style="min-height:80%">
         {{- block "main" . }}{{- end }}
-        </div>
+      </div>
 
-    {{ partial "footer" . }}
-</body>
+      {{ partial "footer" . }}
+    </body>
+  </div>
 </html>
