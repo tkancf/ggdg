@@ -22,6 +22,8 @@
     <meta name="twitter:site" content="{{ .Permalink }}">
     <meta name="twitter:image" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ .Params.thumbnail }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}{{ end }}">
 
+    <link rel="stylesheet" href="/css/sakura.css" type="text/css">
+
     {{ with .OutputFormats.Get "RSS" }}
         <link href="{{ .RelPermalink }}" rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
         <link href="{{ .RelPermalink }}" rel="feed" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
@@ -36,5 +38,4 @@
           gtag('config', '{{ .Site.GoogleAnalytics }}');
         </script>
     {{ end }}
-
 </head>
