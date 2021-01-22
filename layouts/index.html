@@ -2,6 +2,7 @@
   {{partial "head" .}}
   <div class="container">
     <body>
+    {{partial "header" .}}
       <ul>
         {{ with (.Site.GetPage "post") }}
         {{ range first 10 .Pages.ByPublishDate.Reverse }}
