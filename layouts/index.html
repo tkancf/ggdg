@@ -5,7 +5,7 @@
       {{partial "header" .}}
       <ul>
         {{ with (.Site.GetPage "post") }}
-          {{ range first 7 .Pages.ByPublishDate.Reverse }}
+          {{ range first 12 .Pages.ByPublishDate.Reverse }}
           <li>
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
             <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
