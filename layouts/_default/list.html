@@ -1,6 +1,7 @@
 <html>
   {{partial "head" .}}
   <body>
+    {{partial "header" .}}
     <ul>
       {{ with (.Site.GetPage "post") }}
       {{ range first 100 .Pages.ByPublishDate.Reverse }}
