@@ -168,7 +168,7 @@ blockquote *:last-child {
 
 header {
 	background: var(--nc-bg-2);
-	border-bottom: 1px solid var(--nc-bg-3);
+	border-bottom: 2px solid gray;
 	padding: 2rem 1.5rem;
 	
 	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
@@ -261,7 +261,7 @@ samp,
 kbd,
 pre {
 	/* The main preformatted style. This is changed slightly across different cases. */
-	background: var(--nc-bg-2);
+	background: #EEEEEE;
 	border: 1px solid var(--nc-bg-3);
 	border-radius: 4px;
 	padding: 3px 6px;
