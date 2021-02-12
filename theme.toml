@@ -6,8 +6,8 @@ license = "MIT"
 licenselink = "https://github.com/tkancf/ggdg/blob/master/LICENSE"
 description = "My blog theme"
 homepage = "https://ggdg.tkan.dev/"
-tags = [blog]
-features = [minimal]
+tags = ["blog"]
+features = ["minimal"]
 min_version = "0.41.0"
 
 [author]
