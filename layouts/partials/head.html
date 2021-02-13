@@ -32,6 +32,8 @@
     {{ end }}
 
     {{ if .Site.GoogleAnalytics }}
+      {{ if .Draft }}
+      {{ else }}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -39,5 +41,6 @@
           gtag('js', new Date());
           gtag('config', '{{ .Site.GoogleAnalytics }}');
         </script>
+      {{ end }}
     {{ end }}
 </head>
